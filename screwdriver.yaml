@@ -32,6 +32,7 @@ jobs:
       # "command_to_run" is the single command that is executed during this
       # step. Environment variables will be passed between steps, within
       # the same job (as shown below)
+      - sleep: 10000
       - install: sd-step exec core/curl "curl --version"
       - check: /opt/sd/bin/hab pkg path core/curl
       - export: export GREETING="Hello, world!"
