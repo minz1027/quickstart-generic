@@ -31,7 +31,9 @@ jobs:
       # The "step_name" is a convenient label to reference it by. The
       # "command_to_run" is the single command that is executed during this
       # step. Environment variables will be passed between steps, within
-      # the same job (as shown below).
+      # the same job (as shown below)
+      - install: sd-step exec core/curl "curl --version"
+      - check: /opt/bin/hab pkg path core/curl
       - export: export GREETING="Hello, world!"
       - hello: echo $GREETING
       # Metadata is a structured key/value storage of relevant information about a build. 
